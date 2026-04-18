@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunera Eye Care: Investor Presentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #007bff;
+            --accent-color: #28a745;
+            --text-color: #333;
+            --light-text-color: #f8f9fa;
+            --bg-color: #ffffff;
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 5%;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid #eee;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23f0f0f0" stroke-width="0.5" /></pattern><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="url(%23smallGrid)" /><path d="M 100 0 L 0 0 0 100" fill="none" stroke="%23e0e0e0" stroke-width="1" /></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .slide:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: var(--accent-color);
+        }
+
+        p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 15px auto;
+            color: #555;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        ul li {
+            background-color: #e9f5ff;
+            margin-bottom: 10px;
+            padding: 12px 20px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 5px;
+            font-size: 1.05em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .logo-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: auto;
+            z-index: 100;
+        }
+
+        .image-placeholder-div {
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-size: 1.2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .image-placeholder-div img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .infographic-description {
+            font-style: italic;
+            color: #555;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .infographic-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Competitive Advantage Infographic V2 */
+        .infographic-v2 {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+            flex-wrap: wrap;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px;
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .comparison-card.traditional-card {
+            border-top: 8px solid #adb5bd;
+            background-color: #f8f9fa;
+        }
+
+        .comparison-card.lunera-card {
+            border-top: 8px solid var(--accent-color);
+            background-color: #ffffff;
+            box-shadow: 0 20px 45px rgba(40, 167, 69, 0.15);
+            z-index: 2;
+        }
+
+        .card-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: var(--heading-font);
+        }
+
+        .traditional-card .card-title { color: #6c757d; }
+        .lunera-card .card-title { color: var(--accent-color); }
+
+        .card-subtitle {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .feature-item-v2 {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .feature-item-v2:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .feature-icon-v2 {
+            font-size: 1.8em;
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .feature-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .feature-label {
+            font-weight: 700;
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+
+        .lunera-card .feature-label { color: var(--primary-color); }
+
+        .feature-desc-v2 {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .winner-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 45px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .cost-comparison {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 2.2em;
+            font-weight: 800;
+            display: block;
+        }
+
+        .traditional-card .price-tag { color: #dc3545; text-decoration: line-through; opacity: 0.6; }
+        .lunera-card .price-tag { color: var(--accent-color); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+            p, ul li { font-size: 1em; }
+            .slide { padding: 20px 3%; }
+            .infographic-container { padding: 10px; }
+            .logo-img { width: 150px; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <img src="4.png" alt="Lunera Eye Care Logo" class="logo-img">
+
+    <!-- Slide 1: Title Slide -->
+    <section class="slide" id="slide1">
+        <h1>Lunera Eye Care</h1>
+        <h2>Revolutionizing Preventable Blindness in South Asia</h2>
+        <p style="font-size: 2.2em; color: #1877F2; font-weight: bold; max-width: none; white-space: nowrap;">An Investment Opportunity in AI-Powered Eye Screening</p>
+        <p>Akram Hossain/Razib Mustafiz - Nevronus Systems | March 2026</p>
+    </section>
+
+    <!-- Slide 2: The Urgent Problem -->
+    <section class="slide" id="slide2">
+        <h2>The Silent Epidemic: Preventable Blindness in South Asia</h2>
+        <ul>
+            <li>Millions in South Asia suffer from avoidable blindness due to <span class="highlight">Diabetic Retinopathy (DR), Glaucoma, and Age-related Macular Degeneration (AMD)</span>.</li>
+            <li>Critical barriers include <span class="highlight">lack of access to affordable, timely screening</span> and a shortage of specialist care.</li>
+            <li><strong>Example: Bangladesh</strong> – <span class="highlight">14 million people with diabetes</span>; <span class="highlight">1 in 3 are at risk of DR</span>.</li>
+        </ul>
+        <div class="image-placeholder-div" style="height: auto; flex-direction: column; padding: 20px;">
+            <img src="diseases-bangladesh.jpg" alt="Diseases in Bangladesh" style="width: 100%; margin-bottom: 20px;">
+            <img src="disease-srilanka.png" alt="Diseases in Sri Lanka" style="width: 100%; margin-bottom: 20px;">
+            <img src="diseases-nepal.jpg" alt="Diseases in Nepal" style="width: 100%; margin-bottom: 20px;">
+            <img src="diseases-bhutan.jpg" alt="Diseases in Bhutan" style="width: 100%;">
+        </div>
+        <p class="infographic-description">Infographic: Disease prevalence in Bangladesh, Sri Lanka, Nepal, and Bhutan.</p>
+    </section>
+
+    <!-- Slide 3: Mission -->
+    <section class="slide" id="slide3">
+        <h2>Lunera's Mission: Eradicating Preventable Blindness</h2>
+        <ul>
+            <li>Born from empathy, innovation, and an urgent national need for equitable eye care.</li>
+            <li>Bangladesh's first AI-powered, portable, and affordable eye-screening device.</li>
+        </ul>
+        <div class="image-placeholder-div" style="height: auto; flex-direction: column; padding: 20px 20px 0 20px;">
+            <img src="diagnosis1.png" alt="Diagnosis Image 1" style="width: 100%; margin-bottom: 20px;">
+            <img src="diagnosis2.png" alt="Diagnosis Image 2" style="width: 100%; margin-bottom: 20px;">
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1547306843114687%2F&show_text=false&t=0" width="100%" height="600" style="border:none;overflow:hidden; border-radius: 8px; margin-bottom: 0px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1602507297750250%2F&show_text=false&t=0" width="100%" height="600" style="border:none;overflow:hidden; border-radius: 8px; margin-bottom: 0px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <p class="infographic-description">Lunera device being used in a simple clinic setting (urban) and a rural outreach camp.</p>
+    </section>
+
+    <!-- Slide 4: Device -->
+    <section class="slide" id="slide4">
+        <h2>The Lunera Fundus Cam: Portable, Smart, Affordable</h2>
+        <div class="image-placeholder-div" style="height: auto; flex-direction: column; padding: 20px;">
+            <img src="device1.jpg" alt="Lunera Device 1" style="width: 100%; margin-bottom: 20px;">
+            <img src="device2.jpg" alt="Lunera Device 2" style="width: 100%; margin-bottom: 20px;">
+            <img src="device3.jpg" alt="Lunera Device 3" style="width: 100%; margin-bottom: 20px;">
+            <img src="device4.jpg" alt="Lunera Device 4" style="width: 100%;">
+        </div>
+        <p class="infographic-description">Photograph of the Lunera device attached to a smartphone.</p>
+    </section>
+
+    <!-- Slide 5: Detection -->
+    <section class="slide" id="slide5">
+        <h2>Unmatched Detection Capabilities</h2>
+        <div class="image-placeholder-div" style="height: auto; flex-direction: column; padding: 20px;">
+            <img src="amdtflite.png" alt="AMD TFLite" style="width: 100%; margin-bottom: 20px;">
+            <img src="amdroc.png" alt="AMD ROC Curve" style="width: 100%; margin-bottom: 20px;">
+            <img src="amdstat.png" alt="AMD Statistics/Confusion Matrix" style="width: 100%;">
+        </div>
+        <p class="infographic-description">AUC, ROC curve and Confusion matrix of Retinal diseases detection system</p>
+    </section>
+
+    <!-- Slide 6: App -->
+    <section class="slide" id="slide6">
+        <h2>The Lunera Fundus Cam App: Simplicity & Speed</h2>
+        <div class="image-placeholder-div" style="height: auto; flex-direction: column; padding: 20px;">
+            <img src="mobile-app.png" alt="Lunera Mobile App" style="width: 100%; margin-bottom: 20px;">
+            <img src="web-app.png" alt="Lunera Web App" style="width: 100%;">
+        </div>
+        <p class="infographic-description">Mobile app diagnosis report and Web app Doctor's list.</p>
+    </section>
+
+    <!-- Slide 7: Market -->
+    <section class="slide" id="slide7">
+        <h2>Massive Market Opportunity in South Asia</h2>
+        <div class="infographic-container">
+            <canvas id="marketChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Slide 8: 3-Year Projection -->
+    <section class="slide" id="slide8">
+        <h2>Scaling Our Impact: 3-Year Penetration Plan</h2>
+        <div class="infographic-container">
+            <canvas id="projectionChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Slide 9: Revenue -->
+    <section class="slide" id="slide9">
+        <h2>Financial Projections: High Impact, High Returns</h2>
+        <div class="infographic-container">
+            <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="infographic-container">
+            <canvas id="cumulativeRevenueChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Slide 10: Competitive Advantage -->
+    <section class="slide" id="slide10">
+        <h2>Our Competitive Advantage</h2>
+        <h3 style="color: var(--primary-color); font-size: 2.2em; margin-bottom: 30px;">Disrupting the Standard of Care: Lunera vs. Legacy Systems</h3>
+        
+        <div class="infographic-v2">
+            <!-- Traditional Systems Card -->
+            <div class="comparison-card traditional-card">
+                <div class="card-header">
+                    <div class="card-title">Legacy Systems</div>
+                    <div class="card-subtitle">Imported Desktop Fundus Cameras</div>
+                </div>
+                <ul class="feature-list">
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">💰</span>
+                        <div class="feature-content">
+                            <span class="feature-label">High Entry Barrier</span>
+                            <span class="feature-desc-v2">Expensive imported hardware ($15k - $25k).</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">🏗️</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Fixed Installation</span>
+                            <span class="feature-desc-v2">Bulky, heavy, and requires specialized clinical setup.</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">⏳</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Delayed Diagnosis</span>
+                            <span class="feature-desc-v2">Requires manual review by ophthalmologists; days to get results.</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">🎓</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Specialist Required</span>
+                            <span class="feature-desc-v2">Highly trained technicians needed for operation.</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cost-comparison">
+                    <span class="price-tag">$20,000+</span>
+                    <span class="feature-desc-v2">Average Unit Cost</span>
+                </div>
+            </div>
+
+            <!-- Lunera Card -->
+            <div class="comparison-card lunera-card">
+                <div class="winner-badge">GAME CHANGER</div>
+                <div class="card-header">
+                    <div class="card-title">Lunera Fundus Cam</div>
+                    <div class="card-subtitle">AI-Powered Portable Screening</div>
+                </div>
+                <ul class="feature-list">
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">⚡</span>
+                        <div class="feature-content">
+                            <span class="feature-label">95% More Affordable</span>
+                            <span class="feature-desc-v2">Designed and manufactured locally for maximum cost-efficiency.</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">📱</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Pocket-Sized Portability</span>
+                            <span class="feature-desc-v2">Ultra-lightweight; fits in a medical bag for rural outreach.</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">🤖</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Instant AI Insights</span>
+                            <span class="feature-desc-v2">Real-time screening for DR, Glaucoma, & AMD in under 30 seconds.</span>
+                        </div>
+                    </li>
+                    <li class="feature-item-v2">
+                        <span class="feature-icon-v2">🚀</span>
+                        <div class="feature-content">
+                            <span class="feature-label">Universal Access</span>
+                            <span class="feature-desc-v2">Intuitive interface; can be operated by health workers anywhere.</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cost-comparison">
+                    <span class="price-tag">< $1,000</span>
+                    <span class="feature-desc-v2">Target Unit Cost</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infographic-container">
+            <canvas id="comparisonChart"></canvas>
+        </div>
+        <p class="infographic-description"><strong>Strategic Advantage:</strong> Lunera bridges the gap between high-end ophthalmology and grassroots primary care.</p>
+    </section>
+
+    <!-- Slide 11: Team -->
+    <section class="slide" id="slide11">
+        <h2>Driving Innovation: Our Leadership</h2>
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+            <img src="team-photo.jpg" alt="CEO Md.Razib Mustafiz and Chairman Akram Hossain" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <p>CEO Md.Razib Mustafiz and Chairman Akram Hossain holding the Lunera fundus cam</p>
+
+        <!-- <div class="image-placeholder-div" style="height: auto; padding: 20px;display:flex;">
+            <img src="device/1 (1).jpg" alt="" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="device/1 (2).jpg" alt="" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="device/1 (3).jpg" alt="" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="device/1 (4).jpg" alt="" style="width: 100%; height: auto; border-radius: 8px;">
+            <img src="device/1 (5).jpg" alt="" style="width: 100%; height: auto; border-radius: 8px;">
+        </div> -->
+
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+        <img src="device/1 (1).jpg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+        <img src="device/1 (2).jpg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+        <img src="device/1 (3).jpg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+        <img src="device/1 (4).jpg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="image-placeholder-div" style="height: auto; padding: 20px;">
+        <img src="device/1 (5).jpg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+<!-- 1. like this -->
+<!-- <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <img src="device/1 (1).jpg" style="flex:1; height:150px; object-fit:cover; border-radius:8px;">
+    <img src="device/1 (2).jpg" style="flex:1; height:150px; object-fit:cover; border-radius:8px;">
+    <img src="device/1 (3).jpg" style="flex:1; height:150px; object-fit:cover; border-radius:8px;">
+    <img src="device/1 (4).jpg" style="flex:1; height:150px; object-fit:cover; border-radius:8px;">
+    <img src="device/1 (5).jpg" style="flex:1; height:150px; object-fit:cover; border-radius:8px;">
+</div> -->
+        <p>Images of Lunera Fundus Cam with Lunera Eyescan mobile application</p>
+    </section>
+
+    <!-- Slide 12: The Ask -->
+    <!-- <section class="slide" id="slide12">
+        <h2>Investment Opportunity</h2>
+        <p><strong>Investment Sought:</strong> BDT 60,000,000 (Approx. USD 512,820)</p>
+        <div class="infographic-container">
+            <canvas id="investmentChart"></canvas>
+        </div>
+        <div class="infographic-container">
+            <canvas id="roiChart"></canvas>
+        </div>
+    </section> -->
+
+    <!-- Slide 13: Contact -->
+    <section class="slide" id="slide13">
+        <h2>Join Us in Vision: Invest in Lunera</h2>
+        <p>Email: hello@luneraeyecare.com | Website: www.luneraeyecare.com</p>
+        <a href="https://www.luneraeyecare.com" target="_blank" class="cta-button">Learn More & Connect</a>
+    </section>
+
+    <script>
+        // Charts
+        const ctxMarket = document.getElementById('marketChart').getContext('2d');
+        new Chart(ctxMarket, {
+            type: 'bar',
+            data: {
+                labels: ['Bangladesh', 'Sri Lanka', 'Nepal', 'Bhutan'],
+                datasets: [
+                    { label: 'DR', data: [5.05, 1.32, 0.83, 0.02], backgroundColor: '#007bff' },
+                    { label: 'Glaucoma', data: [1.94, 1.10, 0.16, 0.02], backgroundColor: '#28a745' },
+                    { label: 'AMD', data: [8.89, 0.45, 1.05, 0.03], backgroundColor: '#ffc107' }
+                ]
+            },
+            options: { responsive: true, scales: { x: { stacked: true }, y: { stacked: true } } }
+        });
+
+        const ctxProjection = document.getElementById('projectionChart').getContext('2d');
+        new Chart(ctxProjection, {
+            type: 'line',
+            data: {
+                labels: ['Year 0', 'Year 1', 'Year 2', 'Year 3'],
+                datasets: [{ label: 'Market Penetration %', data: [0, 10, 20, 30], borderColor: '#0056b3', fill: true }]
+            }
+        });
+
+        const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctxRevenue, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [{ label: 'Annual Revenue (Million BDT)', data: [208.1, 416.2, 624.3], backgroundColor: '#007bff' }]
+            }
+        });
+
+        const ctxCumulative = document.getElementById('cumulativeRevenueChart').getContext('2d');
+        new Chart(ctxCumulative, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [
+                    { label: 'Annual', type: 'bar', data: [208.1, 416.2, 624.3], backgroundColor: 'rgba(0,123,255,0.5)' },
+                    { label: 'Cumulative', type: 'line', data: [208.1, 624.3, 1248.6], borderColor: '#28a745' }
+                ]
+            }
+        });
+
+        const ctxComparison = document.getElementById('comparisonChart').getContext('2d');
+        new Chart(ctxComparison, {
+            type: 'radar',
+            data: {
+                labels: ['Cost Savings', 'Portability', 'Diagnostic Speed', 'Universal Access', 'AI Accuracy'],
+                datasets: [
+                    { 
+                        label: 'Lunera Fundus Cam', 
+                        data: [10, 10, 10, 9, 9.5], 
+                        borderColor: '#28a745', 
+                        backgroundColor: 'rgba(40, 167, 69, 0.25)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#28a745',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#28a745',
+                        pointRadius: 5
+                    },
+                    { 
+                        label: 'Traditional Systems', 
+                        data: [1.5, 2.5, 3.5, 3, 7.5], 
+                        borderColor: '#adb5bd', 
+                        backgroundColor: 'rgba(173, 181, 189, 0.2)',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#adb5bd',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#adb5bd',
+                        pointRadius: 4,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: true,
+                scales: { 
+                    r: { 
+                        beginAtZero: true, 
+                        max: 10,
+                        ticks: { display: false, stepSize: 2 },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: {
+                            font: {
+                                family: "'Montserrat', sans-serif",
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#333'
+                        }
+                    } 
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                family: "'Roboto', sans-serif",
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        padding: 12,
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 13 },
+                        cornerRadius: 8
+                    }
+                }
+            }
+        });
+
+        const ctxInvestment = document.getElementById('investmentChart').getContext('2d');
+        new Chart(ctxInvestment, {
+            type: 'pie',
+            data: {
+                labels: ['R&D (35%)', 'Market (30%)', 'Manufacturing (20%)', 'Talent (15%)'],
+                datasets: [{ data: [35, 30, 20, 15], backgroundColor: ['#0056b3', '#28a745', '#ffc107', '#dc3545'] }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(item) {
+                                let total = 60000000;
+                                let bdt = (total * item.raw / 100 / 1000000).toFixed(1);
+                                return item.label + ': BDT ' + bdt + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctxROI = document.getElementById('roiChart').getContext('2d');
+        new Chart(ctxROI, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{ label: 'Valuation (Million BDT)', data: [300, 800, 2000, 4500, 10000], borderColor: '#28a745' }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return 'Valuation: BDT ' + ctx.raw + 'M (ROI: ' + (ctx.raw/60).toFixed(1) + 'x)'; }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
