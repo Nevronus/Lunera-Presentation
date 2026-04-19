@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunera Eye Care | AI-Powered Vision for South Asia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0056b3',
+                        secondary: '#28a745',
+                        accent: '#1877F2',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 0% 0%, rgba(0, 86, 179, 0.05) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(40, 167, 69, 0.05) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-white selection:bg-primary/20 selection:text-primary">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="assets/images/4.png" alt="Lunera Logo" class="h-12 w-auto">
+                    <span class="font-display font-bold text-xl tracking-tight text-primary">LUNERA <span class="text-secondary">EYE CARE</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#problem" class="text-sm font-medium hover:text-primary transition-colors">The Problem</a>
+                    <a href="#solution" class="text-sm font-medium hover:text-primary transition-colors">Our Solution</a>
+                    <a href="#technology" class="text-sm font-medium hover:text-primary transition-colors">Technology</a>
+                    <a href="#market" class="text-sm font-medium hover:text-primary transition-colors">Market</a>
+                    <a href="#team" class="text-sm font-medium hover:text-primary transition-colors">Team</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-primary/25">Invest Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight mb-8">
+                Revolutionizing <span class="gradient-text">Preventable Blindness</span> <br> in South Asia
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                An investment opportunity in AI-powered eye screening, eradicating avoidable blindness through accessible innovation.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#solution" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-primary/20">Explore Our Technology</a>
+                <a href="#contact" class="bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">Get the Pitch Deck</a>
+            </div>
+            <div class="mt-16 relative mx-auto max-w-5xl">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <img src="assets/images/device1.jpg" alt="Lunera Fundus Cam" class="relative rounded-2xl shadow-2xl border border-white/20">
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center font-display mb-20">
+                <div>
+                    <h2 class="text-4xl font-bold text-dark mb-6">The Silent Epidemic</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Millions in South Asia suffer from avoidable blindness due to <span class="font-semibold text-primary">Diabetic Retinopathy (DR), Glaucoma, and Age-related Macular Degeneration (AMD)</span>.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div class="bg-red-100 text-red-600 p-3 rounded-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Access Crisis</h3>
+                                <p class="text-slate-600">Lack of affordable, timely screening and extreme shortage of specialist care.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div class="bg-amber-100 text-amber-600 p-3 rounded-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Bangladesh Stats</h3>
+                                <p class="text-slate-600"><span class="font-bold text-dark">14M</span> diabetic patients; <span class="font-bold text-dark">1 in 3</span> at immediate risk of vision loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <img src="assets/images/diseases-bangladesh.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover border-4 border-white">
+                        <img src="assets/images/disease-srilanka.png" class="rounded-2xl shadow-lg w-full h-64 object-cover border-4 border-white">
+                    </div>
+                    <div class="space-y-4">
+                        <img src="assets/images/diseases-nepal.jpg" class="rounded-2xl shadow-lg w-full h-64 object-cover border-4 border-white">
+                        <img src="assets/images/diseases-bhutan.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Solution Section -->
+    <section id="solution" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-dark mb-4">Born from Empathy, Built with AI</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-16 font-light">
+                Bangladesh's first AI-powered, portable, and affordable eye-screening device designed to bridge the gap in primary care.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Portable & Smart</h3>
+                    <p class="text-slate-600 font-light">The Lunera Fundus Cam attaches directly to smartphones, enabling eye screening anywhere.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Instant Diagnosis</h3>
+                    <p class="text-slate-600 font-light">Our AI provides real-time screening for DR, Glaucoma, & AMD in under 30 seconds.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-16 h-16 bg-amber-100/50 rounded-2xl flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">95% Cost Savings</h3>
+                    <p class="text-slate-600 font-light">Replacing $20,000 legacy systems with a sub-$1,000 locally manufactured solution.</p>
+                </div>
+            </div>
+            
+            <div class="mt-24 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="assets/images/device2.jpg" class="rounded-2xl shadow-lg">
+                    <img src="assets/images/device3.jpg" class="rounded-2xl shadow-lg mt-8">
+                </div>
+                <div class="text-left">
+                    <h3 class="text-3xl font-bold mb-6">Built for the Field</h3>
+                    <p class="text-lg text-slate-600 mb-8 font-light leading-relaxed">
+                        Whether in an urban clinic or a rural outreach camp, Lunera empowers health workers to deliver expert-level screening.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center flex-1">
+                            <span class="block text-2xl font-bold text-primary">Ultra-Light</span>
+                            <span class="text-xs text-slate-500 uppercase tracking-widest">Portability</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center flex-1">
+                            <span class="block text-2xl font-bold text-secondary">30 Secs</span>
+                            <span class="text-xs text-slate-500 uppercase tracking-widest">Diagnosis Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Performance -->
+    <section id="technology" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark mb-4">Unmatched Precision</h2>
+                <p class="text-lg text-slate-600 font-light">Rigorous AI training and clinical validation ensuring clinical-grade accuracy.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold mb-4 text-center">Confusion Matrix</h4>
+                    <img src="assets/images/amdtflite.png" class="rounded-xl w-full">
+                    <p class="text-xs text-slate-400 mt-4 text-center italic">Retinal disease detection model architecture</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold mb-4 text-center">ROC Curve</h4>
+                    <img src="assets/images/amdroc.png" class="rounded-xl w-full">
+                    <p class="text-xs text-slate-400 mt-4 text-center italic">Validation against gold-standard datasets</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold mb-4 text-center">Model Performance</h4>
+                    <img src="assets/images/amdstat.png" class="rounded-xl w-full">
+                    <p class="text-xs text-slate-400 mt-4 text-center italic">High sensitivity & specificity across DR & AMD</p>
+                </div>
+            </div>
+
+            <div class="mt-20 flex flex-col md:flex-row gap-8 items-center justify-center">
+                <div class="max-w-sm">
+                    <h3 class="text-2xl font-bold mb-4">Integrated Ecosystem</h3>
+                    <p class="text-slate-600 mb-6 font-light">Seamless synchronization between our mobile screening app and doctor's web portal.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Instant digital reports
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Tele-ophthalmology ready
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            AI-powered patient triage
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative flex-1 max-w-2xl">
+                    <img src="assets/images/mobile-app.png" class="rounded-2xl shadow-xl w-3/4 relative z-10 mx-auto">
+                    <img src="assets/images/web-app.png" class="rounded-2xl shadow-lg w-3/4 absolute -bottom-10 -right-10 border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section id="market" class="py-24 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8">Massive Untapped Market</h2>
+                    <p class="text-slate-400 text-lg mb-12 font-light leading-relaxed">
+                        South Asia presents one of the largest demographics for chronic eye diseases, yet accessibility remains at an all-time low.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>3-Year Penetration Target</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full w-[30%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm font-semibold">
+                                <span>Cost Reduction vs. Legacy</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
+                    <h4 class="text-xl font-bold mb-8 text-center text-slate-300">Disease Burden (Millions)</h4>
+                    <div class="h-80">
+                        <canvas id="marketChartModern"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-24">
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-widest mb-4">Revenue Projection</h4>
+                    <div class="text-4xl font-bold mb-2">624M <span class="text-sm text-slate-400">BDT</span></div>
+                    <p class="text-slate-500 text-sm">Target Annual Revenue by Year 3</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Valuation Forecast</h4>
+                    <div class="text-4xl font-bold mb-2">2,000M <span class="text-sm text-slate-400">BDT</span></div>
+                    <p class="text-slate-500 text-sm">Estimated Year 3 Valuation</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-sm font-bold text-amber-500 uppercase tracking-widest mb-4">The Ask</h4>
+                    <div class="text-4xl font-bold mb-2">60M <span class="text-sm text-slate-400">BDT</span></div>
+                    <p class="text-slate-500 text-sm">Seeking Investment for R&D & Scale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantage Card Design -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-20">The Game Changer</h2>
+            <div class="grid lg:grid-cols-2 gap-8 relative">
+                <!-- Traditional -->
+                <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 opacity-60">
+                    <div class="text-slate-500 font-bold text-xs uppercase tracking-[0.2em] mb-4">Legacy Systems</div>
+                    <h3 class="text-3xl font-bold mb-8">Imported Desktop Cameras</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-red-500">✕</span>
+                            <div><p class="font-bold">High Entry Barrier</p><p class="text-sm text-slate-500">$15,000 - $25,000 imported units</p></div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-red-500">✕</span>
+                            <div><p class="font-bold">Fixed Installation</p><p class="text-sm text-slate-500">Requires specialized clinical setup</p></div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-red-500">✕</span>
+                            <div><p class="font-bold">Manual Review</p><p class="text-sm text-slate-500">Days for diagnosis by specialists</p></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Lunera -->
+                <div class="bg-white p-10 rounded-[2.5rem] border border-primary/20 shadow-2xl shadow-primary/10 ring-4 ring-primary/5">
+                    <div class="absolute -top-4 right-10 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest animate-bounce">Market Disruptor</div>
+                    <div class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-4">Lunera Advantage</div>
+                    <h3 class="text-3xl font-bold mb-8">AI-Powered Portable Cam</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-secondary">✓</span>
+                            <div><p class="font-bold">Hyper-Affordable</p><p class="text-sm text-slate-600">Sub-$1,000 target unit cost</p></div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-secondary">✓</span>
+                            <div><p class="font-bold">Total Portability</p><p class="text-sm text-slate-600">Fits in a medical bag for rural use</p></div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-2xl text-secondary">✓</span>
+                            <div><p class="font-bold">Instant AI Insights</p><p class="text-sm text-slate-600">Real-time diagnosis in < 30 seconds</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-20 bg-slate-50 p-12 rounded-[2.5rem] border border-slate-100">
+                <div class="max-w-3xl mx-auto h-80">
+                    <canvas id="comparisonChartModern"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section id="team" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-8">Driving Innovation</h2>
+                    <p class="text-lg text-slate-600 font-light leading-relaxed mb-8">
+                        Our leadership brings together technical expertise and visionary passion to solve the vision crisis in South Asia.
+                    </p>
+                    <div class="flex items-center gap-6 p-6 bg-white rounded-3xl shadow-sm">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">Md. Razib Mustafiz</h4>
+                            <p class="text-primary font-semibold text-sm">CEO & Visionary</p>
+                        </div>
+                        <div class="w-px h-12 bg-slate-200"></div>
+                        <div class="flex-1 text-right">
+                            <h4 class="font-bold text-xl">Akram Hossain</h4>
+                            <p class="text-primary font-semibold text-sm">Chairman & Strategist</p>
+                        </div>
+                    </div>
+                    <p class="mt-10 text-slate-500 italic text-sm">"Born from empathy, innovation, and an urgent national need for equitable eye care."</p>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-gradient-to-tr from-primary to-secondary absolute -inset-4 rounded-[3rem] blur-2xl opacity-10"></div>
+                    <img src="assets/images/team-photo.jpg" class="relative rounded-[2.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+
+            <!-- Device Gallery -->
+            <div class="mt-24 grid grid-cols-2 md:grid-cols-5 gap-4">
+                <img src="assets/images/1 (1).jpg" class="rounded-2xl h-48 w-full object-cover shadow-sm hover:scale-105 transition-transform">
+                <img src="assets/images/1 (2).jpg" class="rounded-2xl h-48 w-full object-cover shadow-sm hover:scale-105 transition-transform">
+                <img src="assets/images/1 (3).jpg" class="rounded-2xl h-48 w-full object-cover shadow-sm hover:scale-105 transition-transform">
+                <img src="assets/images/1 (4).jpg" class="rounded-2xl h-48 w-full object-cover shadow-sm hover:scale-105 transition-transform">
+                <img src="assets/images/1 (5).jpg" class="rounded-2xl h-48 w-full object-cover shadow-sm hover:scale-105 transition-transform">
+            </div>
+            <p class="text-center mt-6 text-slate-400 font-light italic">Images of Lunera Fundus Cam with Lunera Eyescan mobile application</p>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-primary rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center text-white">
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-4xl lg:text-5xl font-bold mb-8 relative z-10">Join Us in Vision</h2>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-12 relative z-10">
+                    Invest in the future of eye care. Let's eradicate preventable blindness together.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16 relative z-10">
+                    <a href="mailto:hello@luneraeyecare.com" class="bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all">Email Us</a>
+                    <a href="https://www.luneraeyecare.com" class="bg-primary border-2 border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">Visit Website</a>
+                </div>
+                
+                <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/images/4.png" alt="Lunera Logo" class="h-10 w-auto brightness-0 invert">
+                        <span class="font-display font-bold text-xl tracking-tight">LUNERA</span>
+                    </div>
+                    <div class="text-blue-200 text-sm">
+                        &copy; 2026 Nevronus Systems. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Charts Configuration
+        const chartFont = { family: "'Inter', sans-serif", size: 12 };
+        const displayFont = { family: "'Montserrat', sans-serif", weight: 'bold' };
+
+        // Market Chart
+        new Chart(document.getElementById('marketChartModern').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Bangladesh', 'Sri Lanka', 'Nepal', 'Bhutan'],
+                datasets: [
+                    { label: 'DR', data: [5.05, 1.32, 0.83, 0.02], backgroundColor: '#0056b3', borderRadius: 6 },
+                    { label: 'Glaucoma', data: [1.94, 1.10, 0.16, 0.02], backgroundColor: '#28a745', borderRadius: 6 },
+                    { label: 'AMD', data: [8.89, 0.45, 1.05, 0.03], backgroundColor: '#ffc107', borderRadius: 6 }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { 
+                    x: { stacked: true, grid: { display: false }, ticks: { color: '#94a3b8' } }, 
+                    y: { stacked: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } } 
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#fff', font: chartFont, padding: 20 } }
+                }
+            }
+        });
+
+        // Comparison Chart
+        new Chart(document.getElementById('comparisonChartModern').getContext('2d'), {
+            type: 'radar',
+            data: {
+                labels: ['Cost Savings', 'Portability', 'Diagnosis Speed', 'Universal Access', 'AI Accuracy'],
+                datasets: [
+                    { 
+                        label: 'Lunera Fundus Cam', 
+                        data: [10, 10, 10, 9, 9.5], 
+                        borderColor: '#28a745', 
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#28a745'
+                    },
+                    { 
+                        label: 'Traditional Systems', 
+                        data: [1.5, 2.5, 3.5, 3, 7.5], 
+                        borderColor: '#94a3b8', 
+                        backgroundColor: 'rgba(148, 163, 184, 0.05)',
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 10,
+                        ticks: { display: false },
+                        pointLabels: { font: { ...chartFont, weight: 'bold' }, color: '#475569' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: chartFont, padding: 20 } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
