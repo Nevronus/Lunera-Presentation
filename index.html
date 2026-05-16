@@ -51,9 +51,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <img src="assets/images/4.png" alt="Lunera Logo" class="h-12">
-                    <span class="font-display font-bold text-xl tracking-tight text-primary">LUNERA EYE CARE</span>
+                    <img src="assets/images/4.png" alt="Lunera Logo" class="h-10 sm:h-12">
+                    <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-primary">LUNERA EYE CARE</span>
                 </div>
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#problem" class="text-sm font-medium hover:text-primary transition-colors">The Problem</a>
                     <a href="#solution" class="text-sm font-medium hover:text-primary transition-colors">Our Solution</a>
@@ -62,15 +63,37 @@
                     <a href="#team" class="text-sm font-medium hover:text-primary transition-colors">Team</a>
                     <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-primary/25">Invest Now</a>
                 </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-slate-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#problem" class="block px-3 py-4 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-xl transition-colors">The Problem</a>
+                <a href="#solution" class="block px-3 py-4 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-xl transition-colors">Our Solution</a>
+                <a href="#technology" class="block px-3 py-4 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-xl transition-colors">Technology</a>
+                <a href="#market" class="block px-3 py-4 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-xl transition-colors">Market</a>
+                <a href="#team" class="block px-3 py-4 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-xl transition-colors">Team</a>
+                <div class="pt-4">
+                    <a href="#contact" class="block w-full text-center bg-primary text-white px-6 py-4 rounded-xl text-base font-bold shadow-lg shadow-primary/25">Invest Now</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+    <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight mb-8">
-                Revolutionizing <span class="gradient-text">Preventable Blindness</span> <br> in South Asia
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-6 lg:mb-8">
+                Revolutionizing <span class="gradient-text">Preventable Blindness</span> <br class="hidden sm:block"> in South Asia
             </h1>
             <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                 An investment opportunity in AI-powered eye screening, eradicating avoidable blindness through accessible innovation.
@@ -135,14 +158,14 @@
                     </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-4 pt-12">
-                        <img src="assets/images/diseases-bangladesh.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 object-cover border-4 border-white transition-transform hover:scale-105">
-                        <img src="assets/images/disease-srilanka.png" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-64 object-cover border-4 border-white transition-transform hover:scale-105">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-12 lg:mt-0">
+                    <div class="space-y-4 lg:pt-12">
+                        <img src="assets/images/diseases-bangladesh.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 sm:h-56 lg:h-48 object-cover border-4 border-white transition-transform hover:scale-105">
+                        <img src="assets/images/disease-srilanka.png" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 sm:h-72 lg:h-64 object-cover border-4 border-white transition-transform hover:scale-105">
                     </div>
                     <div class="space-y-4">
-                        <img src="assets/images/diseases-nepal.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-64 object-cover border-4 border-white transition-transform hover:scale-105">
-                        <img src="assets/images/diseases-bhutan.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 object-cover border-4 border-white transition-transform hover:scale-105">
+                        <img src="assets/images/diseases-nepal.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 sm:h-72 lg:h-64 object-cover border-4 border-white transition-transform hover:scale-105">
+                        <img src="assets/images/diseases-bhutan.jpg" class="gallery-img cursor-pointer rounded-2xl shadow-lg w-full h-48 sm:h-56 lg:h-48 object-cover border-4 border-white transition-transform hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -583,6 +606,36 @@
                     legend: { position: 'bottom', labels: { font: chartFont, padding: 20 } }
                 }
             }
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        const toggleMenu = () => {
+            const isExpanded = mobileMenu.classList.contains('hidden');
+            if (isExpanded) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        };
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
         });
 
         // Image Modal Logic
